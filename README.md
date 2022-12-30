@@ -15,6 +15,8 @@ This boilerplate template allows you to create standalone synthesizers, noise bo
 ## Prerequisites
 
 1. Install the [Vult](https://github.com/vult-dsp/vult/) compiler: `sudo npm install vult -g`
+2. Install the compiler toolchain:
+    - *MacOS:* `brew install armmbed/formulae/arm-none-eabi-gcc cmake`
 
 ## Compiling the firmware 
 ```bash
@@ -25,7 +27,7 @@ mkdir build && cd build
 cmake ..
 make
 ```
-Now you can find a main.uf2 in the build folder, which is your firmware.
+Now you can find a `main.uf2` in the build folder, which is your firmware.
 
 ## Copying the Firmware to the PicoADK
 
@@ -36,19 +38,6 @@ reboot after a moment, the drive will disappear and your firmware will be runnin
 ## More information
 
 Please check the [Pico Getting Started Guide](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf) on how to install the toolchain and required libraries for your OS.
-
-## Development
-
-The pipeline will trigger a full build on Push or Pull Request.
-
-### Releasing
-
-The pipeline will trigger a new release build on following tagging scheme:
-
-```bash
-git tag -a v1.0.0 -m "Release v1.0.0"
-git push origin v1.0.0
-```
 
 # Hardware
 
